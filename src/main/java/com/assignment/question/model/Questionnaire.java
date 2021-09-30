@@ -1,51 +1,39 @@
 package com.assignment.question.model;
 
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "questionnaire")
 public class Questionnaire {
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
-    @Column(name = "question")
-    private String question;
-
-    public String getQuesionnaire(List question) {
-        return quesionnaire;
-    }
-
-    public void setQuesionnaire(String quesionnaire) {
-        this.quesionnaire = quesionnaire;
-    }
-
-    private String quesionnaire;
-
-    public long getId() {
-        return Id;
-    }
-
-    public void setId(long id) {
-        this.Id = id;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+    private long id;
+    @Column
+    private String Question;
 
     public Questionnaire() {
         super();
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public Questionnaire(long id, String question) {
-        Id = id;
-        this.question = question;
+    public String getQuestion() {
+        return Question;
+    }
+
+    public void setQuestion(String question) {
+        Question = question;
+    }
+
+    public Questionnaire(Long id, String question) {
+        this.id = id;
+        Question = question;
     }
 }
